@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+   <script>
+
+  $(document).ready(function() {
+
+   $('#registration').validate({
+
+        rules:{
+           name: "required",
+      	    email:{
+                      required: true,
+                       email: true
+                    },
+
+                     Fileuplaod: {
+                          required: true,
+                    },
+                    
+                     phonenum: {
+                          required: true,
+                          maxlength: 10
+                          },
+
+                         zipcode: {
+                             required: true,
+                             maxlength: 6
+                          }
+                        },
+
+
+
+                messages: {
+                   name: "Please enter your name",
+                   phonenum: {
+                       required: "Please provide a phnonenumber",
+                       maxlength: "Your phonenumber does not exceed 10 character",
+                      },
+            
+                      email: "Please enter a valid email address",
+                       Fileupload: "Please upload a file",
+                       Zipcode: {
+                          required: "Please enter a zipcode",
+                          maxlength: "zipcode does not exceed 6 character"
+                
+                        }
+                      },
+                        submitHandler: function(form) {
+			      form.submit();
+			    }
+                   
+              });
+   });
+
+  </script>
+</head>
+
+<body>
+  <form action="" name="registration">
+    Name:<br>
+    <input type="text" name="Name" id="name">
+     <br><br>
+
+     Phonenum:<br>
+     <input type="text" name="Phonenum" id="phonenum">
+      <br><br>
+       
+      Email:<br>
+      <input type="email" name="email" id="email">
+      <br><br>
+     
+      File upload:<br>
+      <input type="file" name="Fileupload" id="file upload" >
+       <br><br>
+    
+      Zipcode:<br>
+      <input type="text" name="Zipcode" pattern="[0-9]*" id="zipcode" >
+       <br><br>
+
+         <button type="submit">Register</button>
+
+   </form>
+ </body>
+</html>
