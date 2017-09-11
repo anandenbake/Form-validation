@@ -3,9 +3,9 @@
 <head>
 
   <meta charset="UTF-8">
-<link rel = "stylesheet" href="css/screen.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
 
 
   <script>
@@ -13,43 +13,49 @@
 
        $("#registration").validate({
 
-        rules:{
-           name: "required",
-      	    email:{
-                      required: true,
-                       email: true
-                    },
+       rules: {
+            Name: {
+                required: true,
+                minlength: 3
 
-                     Fileuplaod:"required",
-         
-                    
-                     phonenum: {
-                          required: true,
-                          minlength: 10
-                          },
+            },
+            email: {
+                required: true,
+                email: true
+            },  
+          Phonenum: {
+                required: true,
+                minlength: 8
+            },
 
-                         zipcode: {
-                             required: true,
-                             maxlength: 6
-                          }
-                        },
+              Fileupload: {
+                required: true,
+            },
+
+            Zipcode: {
+                required: true,
+                minlength: 6
+            },
+        },
 
 
+               messages: {
+               	// name: {
+               	// 	 required: "Please enter a valid email address",
+               	// },
 
-                messages: {
-                   name: "Please enter your name",
-                   phonenum: {
+               	Name: "Please enter a your name",
+
+
+                   Phonenum: {
                        required: "Please provide a phnonenumber",
                        minlength: "Please neter a valid phine number",
                       },
             
                       email: "Please enter a valid email address",
-                       Fileupload: "Please upload a file",
-                       Zipcode: {
-                          required: "Please enter a zipcode",
-                          maxlength: "zipcode does not exceed 6 character"
-                
-                        }
+
+                       Fileupload: "Please choose a file",
+                       Zipcode: "Please enter a valid zipcode"
                       },
                         submitHandler: function(form) {
 			      form.submit();
@@ -61,28 +67,28 @@
 </script>
 </head>
    <body>
-	 <form action="" name="registration">
+	 <form action="" id="registration" >
 	    Name:<br>
-	    <input type="text" name="Name" id="name" class="required">
+	    <input type="text" name="Name" id="name">
 	     <br><br>
 
 	     Phonenum:<br>
-	     <input type="text" name="Phonenum" id="phonenum" class="required">
+	     <input type="text" name="Phonenum" id="phonenum">
 	      <br><br>
 	       
 	      Email:<br>
-	      <input type="email" name="email" id="email" class="required">
+	      <input type="email" name="email" id="email" >
 	      <br><br>
 	     
 	      File upload:<br>
-	      <input type="file" name="Fileupload" id="file upload" class="required">
+	      <input type="file" name="Fileupload" id="file upload">
 	       <br><br>
 	    
 	      Zipcode:<br>
-	      <input type="text" name="Zipcode" pattern="[0-9]*" id="zipcode" class="required">
+	      <input type="text" name="Zipcode" pattern="[0-9]*" id="zipcode">
 	       <br><br>
 
-         <button type="submit">Register</button>
+         <button type="submit">Submit!</button>
    </form>
  </body>
 </html>
