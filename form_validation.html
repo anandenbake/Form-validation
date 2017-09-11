@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-   <script>
 
-  $(document).ready(function() {
+  <meta charset="UTF-8">
+<link rel = "stylesheet" href="css/screen.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
-   $('#registration').validate({
+
+  <script>
+     $().ready(function() {
+
+       $("#registration").validate({
 
         rules:{
            name: "required",
@@ -16,13 +20,12 @@
                        email: true
                     },
 
-                     Fileuplaod: {
-                          required: true,
-                    },
+                     Fileuplaod:"required",
+         
                     
                      phonenum: {
                           required: true,
-                          maxlength: 10
+                          minlength: 10
                           },
 
                          zipcode: {
@@ -37,7 +40,7 @@
                    name: "Please enter your name",
                    phonenum: {
                        required: "Please provide a phnonenumber",
-                       maxlength: "Your phonenumber does not exceed 10 character",
+                       minlength: "Please neter a valid phine number",
                       },
             
                       email: "Please enter a valid email address",
@@ -55,33 +58,31 @@
               });
    });
 
-  </script>
+</script>
 </head>
+   <body>
+	 <form action="" name="registration">
+	    Name:<br>
+	    <input type="text" name="Name" id="name" class="required">
+	     <br><br>
 
-<body>
-  <form action="" name="registration">
-    Name:<br>
-    <input type="text" name="Name" id="name">
-     <br><br>
-
-     Phonenum:<br>
-     <input type="text" name="Phonenum" id="phonenum">
-      <br><br>
-       
-      Email:<br>
-      <input type="email" name="email" id="email">
-      <br><br>
-     
-      File upload:<br>
-      <input type="file" name="Fileupload" id="file upload" >
-       <br><br>
-    
-      Zipcode:<br>
-      <input type="text" name="Zipcode" pattern="[0-9]*" id="zipcode" >
-       <br><br>
+	     Phonenum:<br>
+	     <input type="text" name="Phonenum" id="phonenum" class="required">
+	      <br><br>
+	       
+	      Email:<br>
+	      <input type="email" name="email" id="email" class="required">
+	      <br><br>
+	     
+	      File upload:<br>
+	      <input type="file" name="Fileupload" id="file upload" class="required">
+	       <br><br>
+	    
+	      Zipcode:<br>
+	      <input type="text" name="Zipcode" pattern="[0-9]*" id="zipcode" class="required">
+	       <br><br>
 
          <button type="submit">Register</button>
-
    </form>
  </body>
 </html>
